@@ -51,6 +51,9 @@ include(CMakeCommonLanguageInclude)
 
 # if(CMAKE_GENERATOR STREQUAL "Visual Studio")
 
+
+message(STATUS, "AAAAAAA ${CMAKE_REDSCRIPT_COMPILE_OBJECT}")
+
 if(NOT CMAKE_REDSCRIPT_COMPILE_OBJECT)
     set(CMAKE_REDSCRIPT_COMPILE_OBJECT 
         "<CMAKE_COMMAND> -E copy_if_different <SOURCE> <OBJECT>"
@@ -72,6 +75,9 @@ if(NOT CMAKE_Swift_CREATE_STATIC_LIBRARY)
             "<CMAKE_COMMAND> -E copy_if_different <TARGET> ${MOD_GAME_DIR_PACKED_FILE}"
         )
     endif()
+
+
+    message(STATUS, "BBBBB ${CMAKE_Swift_CREATE_STATIC_LIBRARY}")
 endif()
 
 if(NOT CMAKE_Swift_CREATE_SHARED_MODULE)
